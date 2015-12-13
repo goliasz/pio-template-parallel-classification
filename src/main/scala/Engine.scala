@@ -22,5 +22,5 @@ object ClassificationEngine extends EngineFactory {
       classOf[Preparator],
       Map("naive" -> classOf[NaiveBayesAlgorithm]),
       classOf[Serving])
-  }
+  } 
 }
