@@ -23,9 +23,8 @@ class DataSource(val dsp: DataSourceParams)
 
   @transient lazy val logger = Logger[this.type]
 
-  private val noOfAttributes = 25
-
-  public var requiredElements = List("plan")
+  val noOfAttributes = 25
+  var requiredElements = List("plan")
   for (i <- 0 to noOfAttributes - 1) {
     requiredElements :+ "attr" + i
   }
