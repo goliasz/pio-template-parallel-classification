@@ -12,12 +12,6 @@ import org.apache.spark.mllib.linalg.Vectors
 
 import grizzled.slf4j.Logger
 
-val noOfAttributes = 25
-var requiredElements = List("plan")
-for (i <- 0 to noOfAttributes - 1) {
-  requiredElements :+ "attr" + i
-}
-
 case class DataSourceParams(
   appName: String,
   evalK: Option[Int]  // define the k-fold parameter.
@@ -29,6 +23,12 @@ class DataSource(val dsp: DataSourceParams)
 
   @transient lazy val logger = Logger[this.type]
 
+  val noOfAttributes = 25
+  var requiredElements = List("plan")
+  for (i <- 0 to noOfAttributes - 1) {
+    requiredElements :+ "attr" + i
+  }
+  
   override
   def readTraining(sc: SparkContext): TrainingData = {
 
