@@ -4,7 +4,7 @@ assemblySettings
 
 name := "template-scala-parallel-classification"
 
-organization := "io.prediction"
+organization := "com.kolibero"
 
 libraryDependencies ++= Seq(
   "io.prediction"    %% "core"          % pioVersion.value % "provided",
