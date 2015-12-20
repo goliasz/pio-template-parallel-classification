@@ -11,13 +11,13 @@ import org.apache.spark.SparkContext
 
 import grizzled.slf4j.Logger
 
-case class AlgorithmParams(
+case class RFAlgorithmParams(
   numTrees: Int,
   featureSubsetStrategy: String,
   seed: Int
 ) extends Params
 
-class RandomForestAlgorithm(val ap: AlgorithmParams)
+class RandomForestAlgorithm(val ap: RFAlgorithmParams)
   extends P2LAlgorithm[PreparedData, RandomForestModel, Query, PredictedResult] {
 
   @transient lazy val logger = Logger[this.type]

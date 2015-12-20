@@ -10,12 +10,12 @@ import org.apache.spark.SparkContext
 
 import grizzled.slf4j.Logger
 
-case class AlgorithmParams(
+case class LRAlgorithmParams(
   numClasses: Int,
   intercept: Boolean 
 ) extends Params
 
-class LRWithLBFGSAlgorithm(val ap: AlgorithmParams)
+class LRWithLBFGSAlgorithm(val ap: LRAlgorithmParams)
   extends P2LAlgorithm[PreparedData, LogisticRegressionModel, Query, PredictedResult] {
 
   @transient lazy val logger = Logger[this.type]
