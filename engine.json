@@ -13,6 +13,21 @@
       "params": {
         "lambda": 1.0
       }
+    },
+    {
+      "name": "random_forest",
+      "params": {
+        "numTrees": 5,
+        "featureSubsetStrategy": "auto",
+        "seed": 12345
+      }
+    },
+    {
+      "name": "log_reg_lbfg",
+      "params": {
+        "numClasses": 2,
+        "intercept": true 
+      }
     }
   ]
 }
