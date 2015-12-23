@@ -23,7 +23,7 @@ class DataSource(val dsp: DataSourceParams)
 
   @transient lazy val logger = Logger[this.type]
 
-  val noOfAttributes = 25
+  val noOfAttributes = 55
   var requiredElements = List("plan")
   for (i <- 0 to noOfAttributes - 1) {
     requiredElements :+ "attr" + i
@@ -34,7 +34,7 @@ class DataSource(val dsp: DataSourceParams)
 
     val labeledPoints: RDD[LabeledPoint] = PEventStore.aggregateProperties(
       appName = dsp.appName,
-      entityType = "user",
+      entityType = "point",
       // only keep entities with these required properties defined
       required = Some(requiredElements))(sc)
       // aggregateProperties() returns RDD pair of
