@@ -36,7 +36,7 @@ class RandomForestAlgorithm(val ap: RFAlgorithmParams)
   def predict(model: RandomForestModel, query: Query): PredictedResult = {
 
     val label = model.predict(Vectors.dense(query.features))
-    new PredictedResult(label)
+    new PredictedResult(label, Array(new Res(label,"random_forest",-1)))
   }
 
 }

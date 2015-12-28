@@ -7,6 +7,8 @@ class Serving extends LServing[Query, PredictedResult] {
   override
   def serve(query: Query,
     predictedResults: Seq[PredictedResult]): PredictedResult = {
-    predictedResults.head
+    val rset = predictedResults.map(x=>(x.rset(0))).toArray
+
+    new PredictedResult(rset(0).label, rset)
   }
 }

@@ -34,7 +34,7 @@ class LRWithLBFGSAlgorithm(val ap: LRAlgorithmParams)
 
   def predict(model: LogisticRegressionModel, query: Query): PredictedResult = {
     val label = model.predict(Vectors.dense(query.features))
-    new PredictedResult(label)
+    new PredictedResult(label, Array(new Res(label,"log_reg_lbfg",-1)))
   }
 
 }

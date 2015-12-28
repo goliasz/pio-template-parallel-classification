@@ -8,7 +8,14 @@ class Query(
 ) extends Serializable
 
 class PredictedResult(
-  val label: Double
+  val label: Double,
+  val rset: Array[Res]
+) extends Serializable
+
+class Res(
+  val label: Double,
+  val alg: String,
+  val prob: Double
 ) extends Serializable
 
 class ActualResult(
@@ -21,9 +28,9 @@ object ClassificationEngine extends EngineFactory {
       classOf[DataSource],
       classOf[Preparator],
       Map(
-        //"naive" -> classOf[NaiveBayesAlgorithm],
-        //"random_forest" -> classOf[RandomForestAlgorithm],
-	"log_reg_lbfg" -> classOf[LRWithLBFGSAlgorithm]
+        "naive" -> classOf[NaiveBayesAlgorithm],
+        "random_forest" -> classOf[RandomForestAlgorithm],
+	      "log_reg_lbfg" -> classOf[LRWithLBFGSAlgorithm]
       ),
       classOf[Serving])
   } 

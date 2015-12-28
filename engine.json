@@ -9,6 +9,13 @@
   },
   "algorithms": [
     {
+      "name": "log_reg_lbfg",
+      "params": {
+        "numClasses": 2,
+        "intercept": true 
+      }
+    },
+    {
       "name": "naive",
       "params": {
         "lambda": 1.0
@@ -20,13 +27,6 @@
         "numTrees": 5,
         "featureSubsetStrategy": "auto",
         "seed": 12345
-      }
-    },
-    {
-      "name": "log_reg_lbfg",
-      "params": {
-        "numClasses": 2,
-        "intercept": true 
       }
     }
   ]

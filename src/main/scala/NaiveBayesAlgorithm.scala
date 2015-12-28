@@ -30,7 +30,7 @@ class NaiveBayesAlgorithm(val ap: NBAlgorithmParams)
 
   def predict(model: NaiveBayesModel, query: Query): PredictedResult = {
     val label = model.predict(Vectors.dense(query.features))
-    new PredictedResult(label)
+    new PredictedResult(label, Array(new Res(label,"naive",-1)))
   }
 
 }
